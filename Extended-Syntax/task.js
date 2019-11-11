@@ -25,7 +25,6 @@ function getResult(a, b, c) {
 
 }
 
-console.log(getResult(2, 6, 5));
 
 // Задание 2
 
@@ -41,7 +40,6 @@ function getAverageMark(marks) {
     console.log(total / marks.length);
 }
 
-getAverageMark([2, 4, 5, 4, 4, 5]);
 
 // Задание 3
 
@@ -57,4 +55,4 @@ function askDrink(name, dateOfBirthday) {
     }
   return text;
 }
-console.log(askDrink('Aykansuh', new Date(2005, 17, 10)));
+
