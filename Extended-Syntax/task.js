@@ -18,23 +18,17 @@ function getResult(a, b, c) {
     let arr = [];
 
     if (D > 0) {
-        arr[0] = (-b + Math.sqrt(D)) / (2*a);
-        arr[1] = (-b - Math.sqrt(D)) / (2*a);
-        return arr[0, 1];
+        arr.push[0] = (-b + Math.sqrt(D)) / (2*a);
+        arr.push[1] = (-b - Math.sqrt(D)) / (2*a);
+        arr = [0, 1];
+    } else if (D === 0) {
+        arr.push[0] = -b / (2*a);
+        arr = [0];
+    } else {
+        arr = [];
     }
-
-    else if (D = 0) {
-        arr[0] = -b / (2*a)
-        return arr[0]
-
-    }
-
-    else {
-        return arr;
-    }
-
+    return arr;
 }
-
 
 // Задание 2
 
@@ -46,15 +40,18 @@ function calculateAverageRating(){
 
 function getAverageMark(marks) {
   let total = 0;
-  if (marks.length > 5) {
+  let averageMark;
+  if (marks.length >= 5) {
     marks.splice(5);
     console.log(`Среднее значение первых 5 оценок:`);
-  }
-  for (let i = 0; i < marks.length; i++) {
+    for (let i = 0; i < marks.length; i++) {
       total += marks[i];
     }
-    console.log(total / marks.length);
+    averageMark = total / marks.length;
+  }
+    return averageMark;
 }
+
 
 
 // Задание 3
