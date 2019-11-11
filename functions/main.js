@@ -49,7 +49,34 @@ showSolutionsMessage(2, 4, 2);
 // Задание 2
 
 function getAverageScore(data) {
-	let data = {
+
+	const result = {};
+	
+
+	for (let prop in data) {
+		let value = data[prop];
+		result = {
+			${prop}: ${value},
+		 };
+        }
+
+        return result;
+
+	function getAverageArr(arr) {
+		let total = 0;
+		let average;
+        for (i = 0, i < arr.lenght, i++) {
+        	total += 1;
+        	value = total / arr.lenght;
+        }
+		
+		return value;
+	}
+}
+
+
+
+data = {
 		algebra: [2, 4, 5, 6, 5, 3],
 		geometry: [5, 3, 5, 4],
 		russian: [3, 4, 4, 2],
@@ -60,17 +87,3 @@ function getAverageScore(data) {
 		chemistry: [ 2 ],
 		french: [4, 4],
 	}
-
-	function getAverageArr(arr) {
-		let total = 0;
-		for (let i = 0; i < arr.length; i++) {
-            total += 1;
-
-            return {
-            	total / arr.length;
-            }
-        }
-
-	}
-}
-ß

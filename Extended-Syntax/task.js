@@ -18,15 +18,12 @@ function getResult(a, b, c) {
     let arr = [];
 
     if (D > 0) {
-        arr.push[0] = (-b + Math.sqrt(D)) / (2*a);
-        arr.push[1] = (-b - Math.sqrt(D)) / (2*a);
-        arr = [0, 1];
+        arr.push((-b + Math.sqrt(D)) / (2*a));
+        arr.push((-b - Math.sqrt(D)) / (2*a));
+        
     } else if (D === 0) {
-        arr.push[0] = -b / (2*a);
-        arr = [0];
-    } else {
-        arr = [];
-    }
+        arr.push(-b / (2*a));
+    } 
     return arr;
 }
 
