@@ -1,5 +1,7 @@
 'use strict';
 
+// Задание 1
+
 function getSolution(a, b, c) {
 	let Dis = b**2 - 4*a*c;
 	if (Dis < 0) {
@@ -41,10 +43,6 @@ function showSolutionsMessage(a, b, c) {
 	}
 
 }
-
-showSolutionsMessage(1, 2, 3);
-showSolutionsMessage(7, 20, -3);
-showSolutionsMessage(2, 4, 2);
 
 // Задание 2
 
