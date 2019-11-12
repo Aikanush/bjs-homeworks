@@ -49,41 +49,53 @@ showSolutionsMessage(2, 4, 2);
 // Задание 2
 
 function getAverageScore(data) {
-
-	const result = {};
-	
-
+  let result = {};
+  result.average = 0;
+  let i = 0;
 	for (let prop in data) {
-		let value = data[prop];
-		result = {
-			${prop}: ${value},
-		 };
-        }
-
-        return result;
-
-	function getAverageArr(arr) {
-		let total = 0;
-		let average;
-        for (i = 0, i < arr.lenght, i++) {
-        	total += 1;
-        	value = total / arr.lenght;
-        }
-		
-		return value;
-	}
+      let value = getAverageMark(data[prop])
+      result[prop] = value;
+      result.average += value;
+      i++;
+  }
+  result.average /= i;
+  return result;
 }
 
+function getAverageMark(data) {
+    let total = 0;
+    
+    for (let i = 0; i < data.length; i++) {
+      total += data[i];
+    }
+    return total / data.length;
+}
 
+// Задание 3
 
-data = {
-		algebra: [2, 4, 5, 6, 5, 3],
-		geometry: [5, 3, 5, 4],
-		russian: [3, 4, 4, 2],
-		physics: [5, 5],
-		music: [5, 5, 3],
-		englishe: [4, 5, 3, 3],
-		poetry: [3, 4],
-		chemistry: [ 2 ],
-		french: [4, 4],
+let result = {};
+function getPersonData(secretData) {
+	let value;
+	for (let prop in secretData) {
+		if (prop === 'aaa') {
+			value = 'firtsname';
+		} else {
+			value ='lastname';
+		}
+
+		result[value] = getDataName(secretData);
 	}
+	return result;
+}
+
+function getDataName(secretData) {
+	let value;
+	for (let prop in secretData) {
+		if (prop === 0) {
+			value = 'Родриго';
+		} else {
+			value = 'Эмильо';
+		}
+	}
+	return value;
+}
