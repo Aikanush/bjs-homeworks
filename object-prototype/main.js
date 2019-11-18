@@ -7,8 +7,24 @@ function initCheckBirthday() {
 }
 
 function checkBirthday(birthday) {
-    // код для задачи №1 писать здесь
+    const now = new Date().getTime();
+    const birthdayDate = new Date(birthday).getTime();
+    const diff = now - birthdayDate;
+    let count = 0;
+    for (let i = birthdayDate.getFullYear(); i <= date.getFullYear(); i++) {
+       if (i % 4 === 0 && (i % 100 !== 0 || i % 400 === 0)) {
+           count++;
+       }
+   }
+    const age = diff / (1000 * 60 * 60 * 24 * (365 + count));
+    if (age > 18) {
+      return `Совершеннолетний`
+    } else {
+      return `Несовершеннолетний `
+    }
 }
+
+
 
 function initPrintAnimalSound() {
     const animal = {
@@ -20,8 +36,16 @@ function initPrintAnimalSound() {
     document.getElementById('sound').innerHTML = result;   
 }
 
+getAnimalSound.prototype = animal;
+
 function getAnimalSound(animal) {
-    // код для задачи №2 писать здесь
+    this.sound = animal;
+    if (animal === undefined) {
+        return null;
+    } else {
+        return animal.sound;
+    }
+
 }
 
 function initCalculateStatement() {
@@ -35,5 +59,18 @@ function initCalculateStatement() {
 }
 
 function getAverageMark(marks) {
-    // код для задачи №3 писать здесь
-}
+  for (let i = 0; i < marks.length; i++) {
+      total += marks[i];
+    }
+    let average = total / marks.length;
+    let roundedAverage = Math.round(average);
+     return roundedAverage;
+  }
+
+
+
+
+
+
+
+
