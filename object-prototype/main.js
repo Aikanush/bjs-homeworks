@@ -10,13 +10,7 @@ function checkBirthday(birthday) {
     const now = new Date().getTime();
     const birthdayDate = new Date(birthday).getTime();
     const diff = now - birthdayDate;
-    let count = 0;
-    for (let i = birthdayDate.getFullYear(); i <= date.getFullYear(); i++) {
-       if (i % 4 === 0 && (i % 100 !== 0 || i % 400 === 0)) {
-           count++;
-       }
-   }
-    const age = diff / (1000 * 60 * 60 * 24 * (365 + count));
+    const age = diff / (1000 * 60 * 60 * 24 * 365.25);
     if (age > 18) {
       return `Совершеннолетний`
     } else {
