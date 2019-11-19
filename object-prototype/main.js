@@ -11,11 +11,7 @@ function checkBirthday(birthday) {
     const birthdayDate = new Date(birthday).getTime();
     const diff = now - birthdayDate;
     const age = diff / (1000 * 60 * 60 * 24 * 365.25);
-    if (age > 18) {
-      return `Совершеннолетний`
-    } else {
-      return `Несовершеннолетний `
-    }
+    return age > 18;
 }
 
 
@@ -33,7 +29,6 @@ function initPrintAnimalSound() {
 getAnimalSound.prototype = animal;
 
 function getAnimalSound(animal) {
-    this.sound = animal;
     if (animal === undefined) {
         return null;
     } else {
@@ -53,13 +48,14 @@ function initCalculateStatement() {
 }
 
 function getAverageMark(marks) {
+  let total = 0;
   for (let i = 0; i < marks.length; i++) {
-      total += marks[i];
+      total += parseInt(marks[i], 10);
     }
     let average = total / marks.length;
     let roundedAverage = Math.round(average);
      return roundedAverage;
-  }
+}
 
 
 
