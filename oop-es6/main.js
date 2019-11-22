@@ -161,7 +161,7 @@ class StudentLog {
       average += value;
       i++;
     }
-    retrun (average /= i);
+    return (average /= i);
   }
 }
 
