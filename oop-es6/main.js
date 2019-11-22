@@ -139,7 +139,7 @@ class StudentLog {
       }
       console.log(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`);
 			return this.obj[subject].length;
-      }
+    }
 	}
 
 	getAverageBySubject(subject) {
@@ -147,24 +147,25 @@ class StudentLog {
 		for (let i = 0; i < this.obj[subject].length; i++) {
 			sum += this.obj[subject][i];
 		}
-        return (sum / this.obj[subject].length);
-        if (this.obj[subject] === undefined) {
-        return 0;
-        }
+    console.log(sum / this.obj[subject].length);
+    if (this.obj[subject] === undefined) {
+      return 0;
+    }
 	}
 
-   getTotalAverage() {
-      let i = 0;
-      this.obj.average = 0;
+  getTotalAverage() {
+    let i = 0;
+    let average = 0;
 	  for (let prop in this.obj) {
-      let value = getAverageBySubject(subject[prop]);
-      this.obj[prop] = value;
-      this.obj.average += value;
+      let value = this.getAverageBySubject(prop);
+      average += value;
       i++;
-     }
-     retrun (this.obj.average /= i);
-   }
+    }
+    retrun (average /= i);
+  }
 }
+
+
 
 
 
