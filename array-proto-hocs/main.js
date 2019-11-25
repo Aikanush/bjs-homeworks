@@ -9,9 +9,19 @@ function memoize(fn, limit) {
 
   return function() {
     let newArgs = Array.from(arguments);
-    let check = results.fined(result => compareArrays(result.args, newArgs));
+    let check = results.find(result => compareArrays(result.args, newArgs));
     if (check) {
-      return (result.result);
+      return check.result;
     }
+
+    results.push({ 
+      args: newArgs,
+      result: fn(...newArgs),
+    });
+
+    if (results.length > limit) {
+      results.shift();
+    }
+    return results[results.length - 1].result;
   }
 }
