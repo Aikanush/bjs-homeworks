@@ -127,42 +127,43 @@ class StudentLog {
 	}
 
 	addGrade(grade, subject) {
-		if (grade > 0 && grade <= 5) {
-      if (this.obj[subject] === undefined) {
-        this.obj[subject] = [];
+	  if (grade > 0 && grade <= 5) {
+        if (this.obj[subject] === undefined) {
+          this.obj[subject] = [];
       }
       this.obj[subject].push(grade);
       return this.obj[subject].length;
-    } else {
-      if (this.obj[subject] === undefined) {
-      return 0;
-      }
+     } else {
+        if (this.obj[subject] === undefined) {
+         return 0;
+        }
       console.log(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.`);
-			return this.obj[subject].length;
-    }
+	  return this.obj[subject].length;
+     }
 	}
 
 	getAverageBySubject(subject) {
-		let sum = 0;
-		for (let i = 0; i < this.obj[subject].length; i++) {
-			sum += this.obj[subject][i];
-		}
-    console.log(sum / this.obj[subject].length);
-    if (this.obj[subject] === undefined) {
-      return 0;
-    }
+      if (this.obj[subject] === undefined) {
+          return 0;
+      } else {
+		  let sum = 0;
+		  for (let i = 0; i < this.obj[subject].push(); i++) {
+		   	sum += this.obj[subject][i];
+		  }
+         return (sum / this.obj[subject].length);
+      }
 	}
 
-  getTotalAverage() {
-    let i = 0;
-    let average = 0;
-	  for (let prop in this.obj) {
-      let value = this.getAverageBySubject(prop);
-      average += value;
-      i++;
-    }
-    return (average /= i);
-  }
+   getTotalAverage() {
+     let i = 0;
+     let average = 0;
+	   for (let prop in this.obj) {
+       let value = this.getAverageBySubject(prop);
+       average += value;
+       i++;
+     }
+     return (average /= i);
+   }
 }
 
 
